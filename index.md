@@ -1,35 +1,56 @@
 ---
-title: Home
-layout: home
+share: true
 ---
+# About Diarian
+Diarian is your all-in-one journaling plugin for [Obsidian](https://obsidian.md).
 
-This is a *bare-minimum* template to create a Jekyll site that uses the [Just the Docs] theme. You can easily set the created site to be published on [GitHub Pages] – the [README] file explains how to do that, along with other details.
+This plugin adds functionality from the [Diarium](https://diariumapp.com/) journal app to the note-taking app we all know and love.
 
-If [Jekyll] is installed on your computer, you can also build and preview the created site *locally*. This lets you test changes before committing them, and avoids waiting for GitHub Pages.[^1] And you will be able to deploy your local build to a different platform than GitHub Pages.
+This plugin is *unofficial* to both [Obsidian](https://obsidian.md/) and [Diarium](https://diariumapp.com/).
+# Features
+## Included features
+- A **[Calendar](./Instructions/Calendar.md)** view that displays which days have daily notes on them.
+	- Open daily notes directly from the calendar.
+	- Create daily notes on any day from the calendar.
+	- Commands to [navigate between daily notes](./Instructions/Calendar.md#Editor%20navigation).
+	- Display attached images on the tiles of days that include them.
+- An **[On this day](./Instructions/On%20this%20day.md)** review pane in the sidebar.
+	- Specify in the settings:
+		- The interval between days to review (eg. every 3 months)
+		- How long ago to start including notes (eg. 6 months ago or earlier)
+	- [Get notified](./Instructions/On%20this%20day.md#Notifications) when there are daily notes to review.
+- [Import a pre-existing journal](./Instructions/Importer.md) from [Diarium](https://diariumapp.com/).
+- A [rating](./Instructions/Rating.md) for each daily note that displays in the status bar.
+	- [Customize](./Instructions/Rating.md#Customization) the Unicode characters or emojis used for the rating.
+- Select a template to be automatically inserted when creating a new daily note.
+	- Includes all markdown files in the folder specified under **Settings → Templates → Template folder location**.
+	- Defaults to the template defined under **Settings → Daily notes → Template file location**
+- Insert a [timestamp](./Instructions/Timestamp.md) into the active note.
+- Optionally open the **Calendar** view and/or the **On this day** view on startup.
+- Supports [multiple notes per day](./Instructions/Multiple%20or%20nested%20daily%20notes.md).
+	- The number of dots on each calendar tile is the number of notes that exist on that day.
+- Supports daily notes that have the date or time specified in the file path instead of just the file name.
+	- Allows for [nested daily notes](./Instructions/Multiple%20or%20nested%20daily%20notes.md) sorted in folders by year, month, or day (etc).
+	- Unlike most other plugins I’ve encountered on the Obsidian marketplace.
+<!-- ## Planned features
+Being in early development, there are some important features I have yet to add:
+- The option to specify how to process -->
+## Excluded features
+Since this plugin started as a project for my own personal use, there are features present in [Diarium](https://diariumapp.com/) that I do *not* plan on including in this plugin:
+- The following views from [Diarium](https://diariumapp.com/):
+	- The **Timeline** view
+	- The **Map** view
+		- I recommend using the [Map View](https://obsidian.md/plugins?id=obsidian-map-view) plugin for this feature. Diarian will automatically use your settings for it.
+- Any embedded feeds & events not mentioned in [Included features](index.md#Included%20features).
+- I *may* exclude the ability to insert a location based on your device's current location data.
+	- It depends on the feasibility of implementation.
+	- The [Map View](https://obsidian.md/plugins?id=obsidian-map-view) plugin can also be used as an alternative for this.
+- The ability to lock and encrypt your vault.
+	- For those features, I suggest [password](https://obsidian.md/plugins?search=password) or [encryption plugins](https://obsidian.md/plugins?search=encrypt) from the Obsidian Marketplace like [Protected Note](https://obsidian.md/plugins?id=protected-note), [Password Protection](https://obsidian.md/plugins?id=password-protection),[^1] or [Lock Screen](https://obsidian.md/plugins?id=obsidian-lock-screen-plugin).[^1]
+	- If you sync your vault, [Remotely Save](https://obsidian.md/plugins?id=remotely-save) has an option to encrypt your files on the remote location. The files on your local computer will not be encrypted though.
 
-More specifically, the created site:
+[^1]: [Password Protection](https://obsidian.md/plugins?id=password-protection) and [Lock Screen](https://obsidian.md/plugins?id=obsidian-lock-screen-plugin) *only* put a password on your vault or a folder in your vault; they do *not* encrypt or decrypt it.
+	
+	If you require an encryption feature, browse the Obsidian Marketplace for [plugins with encryption](https://obsidian.md/plugins?search=encrypt).
 
-- uses a gem-based approach, i.e. uses a `Gemfile` and loads the `just-the-docs` gem
-- uses the [GitHub Pages / Actions workflow] to build and publish the site on GitHub Pages
-
-Other than that, you're free to customize sites that you create with this template, however you like. You can easily change the versions of `just-the-docs` and Jekyll it uses, as well as adding further plugins.
-
-[Browse our documentation][Just the Docs] to learn more about how to use this theme.
-
-To get started with creating a site, simply:
-
-1. click "[use this template]" to create a GitHub repository
-2. go to Settings > Pages > Build and deployment > Source, and select GitHub Actions
-
-If you want to maintain your docs in the `docs` directory of an existing project repo, see [Hosting your docs from an existing project repo](https://github.com/just-the-docs/just-the-docs-template/blob/main/README.md#hosting-your-docs-from-an-existing-project-repo) in the template README.
-
-----
-
-[^1]: [It can take up to 10 minutes for changes to your site to publish after you push the changes to GitHub](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/creating-a-github-pages-site-with-jekyll#creating-your-site).
-
-[Just the Docs]: https://just-the-docs.github.io/just-the-docs/
-[GitHub Pages]: https://docs.github.com/en/pages
-[README]: https://github.com/just-the-docs/just-the-docs-template/blob/main/README.md
-[Jekyll]: https://jekyllrb.com
-[GitHub Pages / Actions workflow]: https://github.blog/changelog/2022-07-27-github-pages-custom-github-actions-workflows-beta/
-[use this template]: https://github.com/just-the-docs/just-the-docs-template/generate
+Feel free to create an [issue](https://github.com/Erallie/diarian/issues) if you'd like me to include any of these features!
